@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artur's Projects</title>
+  
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: white;
+      --nav-bg: #1e293b;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --accent: #38bdf8;
+      --shadow: rgba(56, 189, 248, 0.3);
+    }
+
+    .light-theme {
+      --bg-color: #f1f5f9;
+      --text-color: #0f172a;
+      --nav-bg: #ffffff;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --accent: #0284c7;
+      --shadow: rgba(2, 132, 199, 0.3);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: var(--nav-bg);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--accent);
+      color: #0f172a;
+    }
+
+    .nav-links a.active {
+      background-color: var(--accent);
+      color: #0f172a;
+    }
+
+    .right-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .clock {
+      font-size: 18px;
+      font-weight: bold;
+      background-color: var(--card-bg);
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      opacity: 0.8;
+      margin-bottom: 40px;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px;
+      width: 300px;
+      border: 1px solid var(--border-color);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px -15px var(--accent);
+    }
+
+    .project-icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      color: var(--accent);
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .tech-tag {
+      background-color: var(--accent);
+      color: #0f172a;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 25px;
+      background-color: var(--accent);
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .project-link:hover {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+
+    .back-home {
+      margin: 40px auto;
+    }
+
+    .back-home a {
+      color: var(--accent);
+      font-size: 18px;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Главная</a></li>
+      <li><a href="second.html" class="active">📁 Проекты</a></li>
+    </ul>
+    <div class="right-menu">
+      <div class="clock" id="liveClock">--:--:--</div>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+  </nav>
+
+  <section class="section">
+    <h1>📁 Мои проекты</h1>
+    <p class="subtitle">Детальное описание того, что я уже сделал</p>
+
+    <div class="project-grid">
+      
+      <!-- Проект 1 -->
+      <div class="project-card">
+        <div class="project-icon">🚀</div>
+        <h3>Первый сайт</h3>
+        <p>Мой дебютный проект — сайт-визитка с портфолио. Научился верстать, добавлять интерактив, работать с темами и локальным хранилищем.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JS</span>
+        </div>
+        <a href="index.html" class="project-link">Посмотреть</a>
+      </div>
+
+      <!-- Проект 2 -->
+      <div class="project-card">
+        <div class="project-icon">🎁</div>
+        <h3>Сайт-поздравление</h3>
+        <p>Интерактивная открытка для папы на 23 февраля с конфетти, анимацией и секретным посланием.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Canvas</span>
+        </div>
+        <a href="#" class="project-link" onclick="alert('Скоро появится ссылка!')">Скоро</a>
+      </div>
+
+      <!-- Проект 3 -->
+      <div class="project-card">
+        <div class="project-icon">⏰</div>
+        <h3>Таймер-помодоро</h3>
+        <p>Планирую сделать удобный таймер для учёбы с интервалами и уведомлениями. В разработке.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JS</span>
+        </div>
+        <a href="#" class="project-link" onclick="alert('Скоро будет!')">В планах</a>
+      </div>
+
+    </div>
+
+    <div class="back-home">
+      <a href="index.html">← Вернуться на главную</a>
+    </div>
+  </section>
+
+  <script>
+    // Часы
+    const clock = document.getElementById('liveClock');
+    function updateClock() {
+      const now = new Date();
+      clock.textContent = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Переключение темы
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-theme');
+      themeToggle.textContent = '☀️';
+    } else {
+      themeToggle.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-theme');
+      const isLight = body.classList.contains('light-theme');
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+
+</body>
+</html>
