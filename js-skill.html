@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artur - JavaScript</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: white;
+      --nav-bg: #1e293b;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --accent: #38bdf8;
+      --shadow: rgba(56, 189, 248, 0.3);
+    }
+
+    .light-theme {
+      --bg-color: #f1f5f9;
+      --text-color: #0f172a;
+      --nav-bg: #ffffff;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --accent: #0284c7;
+      --shadow: rgba(2, 132, 199, 0.3);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: var(--nav-bg);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: var(--accent);
+      color: #0f172a;
+    }
+
+    .right-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .clock {
+      font-size: 18px;
+      font-weight: bold;
+      background-color: var(--card-bg);
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .skill-icon {
+      font-size: 80px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .skill-description {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .skill-description h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+
+    .code-block {
+      background-color: #0f172a;
+      border-left: 4px solid var(--accent);
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .back-link a {
+      color: var(--accent);
+      font-size: 18px;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Главная</a></li>
+      <li><a href="second.html">📁 Проекты</a></li>
+      <li><a href="index.html#skills">🛠️ Навыки</a></li>
+      <li><a href="index.html#about">👨‍💻 Обо мне</a></li>
+      <li><a href="index.html#contacts">📞 Контакты</a></li>
+    </ul>
+    <div class="right-menu">
+      <div class="clock" id="liveClock">--:--:--</div>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="skill-icon">⚙️</div>
+    <h1>JavaScript</h1>
+
+    <div class="skill-description">
+      <h2>Что это?</h2>
+      <p>JavaScript (JS) — это язык программирования, который делает сайты живыми. С его помощью можно реагировать на клики, отправлять формы, менять содержимое страницы без перезагрузки, создавать анимации, игры и целые веб-приложения.</p>
+
+      <h2>Мой опыт</h2>
+      <p>JavaScript я начал изучать совсем недавно, но уже успел применить его в своём первом сайте. Именно благодаря JS у меня работает счётчик нажатий на кнопку, переключение темы (светлая/тёмная), живые часы и кнопка «Наверх».</p>
+      <p>Что я уже освоил:</p>
+      <ul>
+        <li>Переменные (let, const)</li>
+        <li>Условные операторы (if/else)</li>
+        <li>Функции и обработчики событий (addEventListener)</li>
+        <li>Работа с DOM (document.querySelector)</li>
+        <li>localStorage — сохранение данных между сессиями</li>
+        <li>Таймеры (setInterval)</li>
+        <li>Базовые массивы и объекты</li>
+      </ul>
+
+      <h2>Пример кода</h2>
+      <div class="code-block">
+        // Счётчик нажатий с сохранением в localStorage<br>
+        let count = localStorage.getItem('clickCount') || 0;<br>
+        const button = document.getElementById('mainButton');<br>
+        const display = document.getElementById('counter');<br><br>
+
+        display.textContent = count;<br><br>
+
+        button.addEventListener('click', () => {<br>
+        &nbsp;&nbsp;count++;<br>
+        &nbsp;&nbsp;display.textContent = count;<br>
+        &nbsp;&nbsp;localStorage.setItem('clickCount', count);<br>
+        &nbsp;&nbsp;alert('Ты красавчик 😎');<br>
+        });
+      </div>
+
+      <h2>Полезные ссылки</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank" style="color: var(--accent);">MDN: JavaScript (документация)</a></li>
+        <li><a href="https://learn.javascript.ru" target="_blank" style="color: var(--accent);">Современный учебник JavaScript (learn.javascript.ru)</a></li>
+        <li><a href="https://javascript30.com" target="_blank" style="color: var(--accent);">JavaScript 30 (30 проектов на чистом JS, англ.)</a></li>
+        <li><a href="https://codepen.io" target="_blank" style="color: var(--accent);">CodePen (примеры кода и песочница)</a></li>
+      </ul>
+    </div>
+
+    <div class="back-link">
+      <a href="index.html#skills">← Назад к списку навыков</a>
+    </div>
+  </section>
+
+  <script>
+    const clock = document.getElementById('liveClock');
+    function updateClock() {
+      const now = new Date();
+      clock.textContent = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-theme');
+      themeToggle.textContent = '☀️';
+    } else {
+      themeToggle.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-theme');
+      const isLight = body.classList.contains('light-theme');
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+
+</body>
+</html>

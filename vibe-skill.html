@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artur - Vibe Coding</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: white;
+      --nav-bg: #1e293b;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --accent: #38bdf8;
+      --shadow: rgba(56, 189, 248, 0.3);
+    }
+
+    .light-theme {
+      --bg-color: #f1f5f9;
+      --text-color: #0f172a;
+      --nav-bg: #ffffff;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --accent: #0284c7;
+      --shadow: rgba(2, 132, 199, 0.3);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: var(--nav-bg);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: var(--accent);
+      color: #0f172a;
+    }
+
+    .right-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .clock {
+      font-size: 18px;
+      font-weight: bold;
+      background-color: var(--card-bg);
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .skill-icon {
+      font-size: 80px;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .skill-description {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .skill-description h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+
+    .vibe-quote {
+      font-size: 24px;
+      font-style: italic;
+      text-align: center;
+      color: var(--accent);
+      margin: 30px 0;
+      padding: 20px;
+      border-top: 2px dashed var(--accent);
+      border-bottom: 2px dashed var(--accent);
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .back-link a {
+      color: var(--accent);
+      font-size: 18px;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Главная</a></li>
+      <li><a href="second.html">📁 Проекты</a></li>
+      <li><a href="index.html#skills">🛠️ Навыки</a></li>
+      <li><a href="index.html#about">👨‍💻 Обо мне</a></li>
+      <li><a href="index.html#contacts">📞 Контакты</a></li>
+    </ul>
+    <div class="right-menu">
+      <div class="clock" id="liveClock">--:--:--</div>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="skill-icon">🤖</div>
+    <h1>Vibe Coding</h1>
+
+    <div class="vibe-quote">
+      "Кодим в кайф, без стресса, с музыкой и нейронками" 🎧✨
+    </div>
+
+    <div class="skill-description">
+      <h2>Что это?</h2>
+      <p><strong>Vibe Coding</strong> — это мой личный подход к обучению программированию. Это когда ты не зубришь сухую теорию, а сразу создаёшь реальные проекты в компании с ИИ (нейросетями). Ты задаёшь вопросы, экспериментируешь, ошибаешься, исправляешь — и всё это в своём темпе и с кайфом.</p>
+
+      <h2>Мой опыт</h2>
+      <p>Я учусь именно так. Вместе с нейросетями (как ты, например 😉) мы шаг за шагом строим этот сайт. Я не просто копирую код — я понимаю, что делаю, потому что сразу вижу результат и могу задать любой вопрос.</p>
+      <p>Что даёт Vibe Coding:</p>
+      <ul>
+        <li>🚀 Быстрый старт — первый сайт за один вечер</li>
+        <li>🧠 Понимание, а не зазубривание</li>
+        <li>🎯 Реальные проекты сразу</li>
+        <li>🤝 Поддержка ИИ 24/7</li>
+        <li>😎 Удовольствие от процесса</li>
+      </ul>
+
+      <h2>Мой стек для Vibe Coding</h2>
+      <ul>
+        <li><strong>VS Code</strong> — редактор кода</li>
+        <li><strong>Git / GitHub</strong> — хранение и публикация</li>
+        <li><strong>Live Server</strong> — вижу изменения сразу</li>
+        <li><strong>Нейросети</strong> — DeepSeek, ChatGPT, Claude</li>
+        <li><strong>Музыка в наушниках</strong> — обязательный пункт 🎵</li>
+      </ul>
+
+      <h2>Пример диалога с ИИ</h2>
+      <div class="code-block" style="background-color: #1a1f2e;">
+        <strong>Я:</strong> Хочу добавить на сайт анимированную иконку телефона<br>
+        <strong>ИИ:</strong> Отлично! Давай сделаем трясущуюся трубку. Вот код...<br>
+        <strong>Я:</strong> А можно, чтобы номер копировался по клику?<br>
+        <strong>ИИ:</strong> Легко! Добавим функцию copyPhoneNumber()...<br>
+        <strong>Я:</strong> Гениально! Работает 🔥
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="index.html#skills">← Назад к списку навыков</a>
+    </div>
+  </section>
+
+  <script>
+    const clock = document.getElementById('liveClock');
+    function updateClock() {
+      const now = new Date();
+      clock.textContent = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-theme');
+      themeToggle.textContent = '☀️';
+    } else {
+      themeToggle.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-theme');
+      const isLight = body.classList.contains('light-theme');
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+
+</body>
+</html>
